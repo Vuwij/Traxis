@@ -374,11 +374,12 @@ class MainWidget(skeleton.GuiSkeleton):
                 # get the dl data from the saved session
                 dl = loadData.get('dl')
                 # if it is a float, set it to the dl text box value
-                try:
-                    float(dl)
-                    self.dlLineEdit.setText(dl)
-                except ValueError:
-                    pass
+                if dl:
+                    try:
+                        float(dl)
+                        self.dlLineEdit.setText(dl)
+                    except ValueError:
+                        pass
 
                 # get the data for the initial and final points for the
                 # reference line
